@@ -19,4 +19,4 @@
 - [Portfolio Templates](https://github.com/IbrahimT04/Portfolio-Templates)
 
 ## GitHub Stats
-![Your GitHub stats](https://github-readme-stats.vercel.app/api?username=yourusername&show_icons=true&theme=radical)
+![Your GitHub stats](https://github-readme-stats.vercel.app/api?username=IbrahimT04&show_icons=true&theme=radical)
