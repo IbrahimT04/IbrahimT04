@@ -1,16 +1,22 @@
-## Hi there 👋
+# Hello, I'm Ibrahim Tariq 👋
 
-<!--
-**IbrahimT04/IbrahimT04** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
+## About Me
+- [![Typing SVG](https://readme-typing-svg.demolab.com/?lines=I+am+an+aspiring+Software+Engineering;I+like+to+create+three+dimentional+video+games)](https://git.io/typing-svg)
 - 🌱 I’m currently learning ...
 - 👯 I’m looking to collaborate on ...
 - 🤔 I’m looking for help with ...
 - 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
+- 📫 How to reach me: [itariq640@gmail.com](mailto:itariq640@gmail.com)
 - ⚡ Fun fact: ...
--->
+
+## Technologies & Tools
+- Programming languages:![Python](https://img.shields.io/badge/-Python-blue) ![C++](https://img.shields.io/badge/-C++-orange)
+- Frameworks: ...
+
+## Projects
+- [Complete Basic FPS](https://github.com/IbrahimT04/Complete-Basic-FPS)
+- [Python Projects](https://github.com/IbrahimT04/Ibrahim_Python3)
+- [Portfolio Templates](https://github.com/IbrahimT04/Portfolio-Templates)
+
+## GitHub Stats
+![Your GitHub stats](https://github-readme-stats.vercel.app/api?username=yourusername&show_icons=true&theme=radical)
