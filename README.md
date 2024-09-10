@@ -7,7 +7,7 @@
 - 🤔 I’m seeking help with UI/UX design for web-based game frameworks.
 - 💬 Ask me about modern and old fashioned, three and two-dimensional rendering technologies.
 - 📫 How to reach me: [itariq640@gmail.com](mailto:itariq640@gmail.com)
-- ⚡ Fun fact: Most original 3D games like Doom were actually 2D. The developers used basic raytracing technologies to simulate a 3D world while also using a 2D map. My [Complete Basic FPS](https://github.com/IbrahimT04/Complete-Basic-FPS) project showcases an in-depth use of this technique.
+- ⚡ Fun fact: Most original 3D games like Doom were actually 2D. The developers used basic ray-casting algorithms to simulate a 3D world while also using a 2D map. My [Complete Basic FPS](https://github.com/IbrahimT04/Complete-Basic-FPS) project showcases an in-depth use of this technique.
 
 ## Technologies & Tools
 - - Programming languages:![Python](https://img.shields.io/badge/-Python-blue), ![C++](https://img.shields.io/badge/-C++-orange), ![GLSL](https://img.shields.io/badge/-GLSL-green), ![Verilog](https://img.shields.io/badge/-Verilog-blueviolet), ![Java](https://img.shields.io/badge/-Java-red), ![Swift](https://img.shields.io/badge/-Swift-orange), ![JavaScript](https://img.shields.io/badge/-JavaScript-yellow), ![HTML/CSS](https://img.shields.io/badge/-HTML%2FCSS-blue)
