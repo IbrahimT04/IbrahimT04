@@ -10,7 +10,7 @@
 - ⚡ Fun fact: Most original 3D games like Doom were actually 2D. The developers used basic ray-casting algorithms to simulate a 3D world while also using a 2D map. My [Complete Basic FPS](https://github.com/IbrahimT04/Complete-Basic-FPS) project showcases an in-depth use of this technique.
 
 ## Technologies & Tools
-- - Programming languages:![Python](https://img.shields.io/badge/-Python-blue), ![C++](https://img.shields.io/badge/-C++-orange), ![GLSL](https://img.shields.io/badge/-GLSL-green), ![Verilog](https://img.shields.io/badge/-Verilog-blueviolet), ![Java](https://img.shields.io/badge/-Java-red), ![Swift](https://img.shields.io/badge/-Swift-orange), ![JavaScript](https://img.shields.io/badge/-JavaScript-yellow), ![HTML/CSS](https://img.shields.io/badge/-HTML%2FCSS-blue)
+- Programming languages:![Python](https://img.shields.io/badge/-Python-blue), ![C++](https://img.shields.io/badge/-C++-orange), ![GLSL](https://img.shields.io/badge/-GLSL-green), ![Verilog](https://img.shields.io/badge/-Verilog-blueviolet), ![Java](https://img.shields.io/badge/-Java-red), ![Swift](https://img.shields.io/badge/-Swift-orange), ![JavaScript](https://img.shields.io/badge/-JavaScript-yellow), ![HTML/CSS](https://img.shields.io/badge/-HTML%2FCSS-blue)
 
 - Technologies: Git/GitHub, Linux, Vim, Quartus, Eclipse IDE, MATLAB, VScode, NetBeans, JetBrains IDE’s, Inventor, AutoCAD, SolidWorks, Unreal Engine 5, Godot, Maya/Blender
 
