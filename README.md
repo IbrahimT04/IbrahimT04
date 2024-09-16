@@ -1,7 +1,6 @@
 # Hello, I'm Ibrahim Tariq 👋
-
-## About Me
 [![Typing SVG](https://readme-typing-svg.demolab.com/?lines=I+create+3D+video+games;Software+Engineering+student)](https://git.io/typing-svg)
+## About Me
 - 🌱 I’m currently learning about three-dimensional game rendering technology.
 - 👯 I’m looking to collaborate on a collective game development project.
 - 🤔 I’m seeking help with UI/UX design for web-based game frameworks.
