@@ -1,12 +1,12 @@
 # Hello, I'm Ibrahim Tariq 👋
-[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=I+create+3D+video+games;Software+Engineering+student&color=E1C600)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=I+create+3D+video+games;Software+Engineering+student&color=E1C600)]
 ## About Me
 - 🌱 I’m currently learning about three-dimensional game rendering technology.
 - 👯 I’m looking to collaborate on a collective game development project.
 - 🤔 I’m seeking help with UI/UX design for web-based game frameworks.
 - 💬 Ask me about modern and old fashioned, three and two-dimensional rendering technologies.
 - 📫 How to reach me: [itariq640@gmail.com](mailto:itariq640@gmail.com)
-- ⚡ Fun fact: Most original 3D games like Doom were actually 2D. The developers used basic ray-casting algorithms to simulate a 3D world while also using a 2D map. My [Complete Basic FPS](https://github.com/IbrahimT04/Complete-Basic-FPS) project showcases an in-depth use of this technique.
+- ⚡ Fun fact: Most original 3D games like Doom were actually 2D. The developers used basic ray-casting algorithms to simulate a 3D world while also using a 2D map. My [Block Shooter](https://github.com/IbrahimT04/Block-Shooter) project showcases an in-depth use of this technique.
 
 ## Technologies & Tools
 - Programming languages:![Python](https://img.shields.io/badge/-Python-blue), ![C++](https://img.shields.io/badge/-C++-orange), ![Verilog](https://img.shields.io/badge/-Verilog-blueviolet), ![Java](https://img.shields.io/badge/-Java-red), ![Swift](https://img.shields.io/badge/-Swift-orange), ![JavaScript](https://img.shields.io/badge/-JavaScript-yellow), ![HTML/CSS](https://img.shields.io/badge/-HTML%2FCSS-blue)
@@ -14,9 +14,9 @@
 - Technologies: Git/GitHub, Linux, Vim, Quartus, Eclipse IDE, MATLAB, VScode, NetBeans, JetBrains IDE’s, Inventor, AutoCAD, SolidWorks, Unreal Engine 5, Godot, Maya/Blender
 
 ## Projects
-- [Complete Basic FPS](https://github.com/IbrahimT04/Complete-Basic-FPS)
-- [Python Projects](https://github.com/IbrahimT04/Ibrahim_Python3)
-- [Portfolio Templates](https://github.com/IbrahimT04/Portfolio-Templates)
+- [Block Shooter](https://github.com/IbrahimT04/Block-Shooter)
+- [The Quality Education Goal](https://github.com/IbrahimT04/The-Quality-Education-Goal)
+- [GraphiXion (In Early Development)](https://github.com/IbrahimT04/GraphiXion)
 
 ## GitHub Stats
 <div align="center">
