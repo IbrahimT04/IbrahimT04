@@ -24,3 +24,5 @@
 <a href="http://www.github.com/IbrahimT04"><img width=317 src="https://github-readme-streak-stats.herokuapp.com/?user=IbrahimT04&show_icons=true&theme=radical" /></a>
 <a href="https://github.com/IbrahimT04"><img width=227 src="https://github-readme-stats.vercel.app/api/top-langs/?username=IbrahimT04&langs_count=8&layout=compact&theme=radical" alt="Top Languages" /></a>
 </div>
+
+<img align="left" src="https://komarev.com/ghpvc/?username=IbrahimT04&color=e95c7d&label=Views">
