@@ -21,8 +21,8 @@
 
 ## GitHub Stats
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=IbrahimT04&theme=radical&show_icons=true&rank_icon=github)
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=IbrahimT04&show_icons=true&theme=radical)
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=IbrahimT04&langs_count=10&layout=compact&theme=radical)
+<!--![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=IbrahimT04&show_icons=true&theme=radical) -->
 
 ## Connect with Me
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=linkedin&logoColor=white)](https://ca.linkedin.com/in/ibrahim-tariq-5b9914280)
