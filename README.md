@@ -22,6 +22,8 @@
 ## GitHub Stats
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=IbrahimT04&theme=radical&show_icons=true&rank_icon=github)
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=IbrahimT04&langs_count=10&layout=compact&theme=radical)
+<!-- ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=IbrahimT04&theme=dark&hide_border=true&include_all_commits=true&count_private=true&exclude_repo=rustlings&langs_count=10) -->
+
 <!--![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=IbrahimT04&show_icons=true&theme=radical) -->
 
 ## Connect with Me
