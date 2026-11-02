@@ -30,7 +30,7 @@ export default function CourseExplorer() {
     <div className="honours"><span><Award size={16} /> Dean’s Honour List · 2023 & 2024</span><span><Award size={16} /> Faculty of Engineering Achievement Award</span></div>
     <div className="course-highlights" data-reveal>{highlightCodes.map(code => {
       const course = courses.find(item => item.code === code)!;
-      return <button key={code} className="course-highlight" onClick={() => { setQuery(code); setTerm('all'); setStatus('all'); setStrongOnly(false); document.getElementById('course-explorer').scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
+      return <button key={code} className="course-highlight" onClick={() => { setQuery(code); setTerm('all'); setStatus('all'); setStrongOnly(false); document.getElementById('course-explorer')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
         <span className="highlight-top"><span className="mono">{course.code}</span><ArrowUpRight size={17} /></span><strong>{course.grade}</strong><span>{course.title}</span>
       </button>;
     })}</div>
@@ -39,7 +39,7 @@ export default function CourseExplorer() {
       <div className="course-controls">
         <label className="search-field"><Search size={18} /><span className="sr-only">Search courses</span><input placeholder="Search courses or codes…" value={query} onChange={event => setQuery(event.target.value)} />{query && <button aria-label="Clear course search" onClick={() => setQuery('')}><X size={16} /></button>}</label>
         <label className="select-field"><span className="sr-only">Filter by term</span><select value={term} onChange={event => setTerm(event.target.value)}><option value="all">All terms</option>{terms.map(item => <option key={item.id} value={item.id}>{item.label}</option>)}</select></label>
-        <label className="select-field"><span className="sr-only">Filter by course status</span><select value={status} onChange={event => setStatus(event.target.value)}><option value="all">All statuses</option>{Object.entries(statusLabels).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>
+        <label className="select-field"><span className="sr-only">Filter by course status</span><select value={status} onChange={event => setStatus(event.target.value as CourseStatus | 'all')}><option value="all">All statuses</option>{Object.entries(statusLabels).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>
       </div>
       <div className="filter-meta"><button className={`filter-toggle ${strongOnly ? 'is-active' : ''}`} aria-pressed={strongOnly} onClick={() => setStrongOnly(value => !value)}><SlidersHorizontal size={14} /> A-range grades</button><span role="status">Showing {filtered.length} of {courses.length} entries</span>{hasFilter && <button className="text-button" onClick={reset}>Reset filters <X size={13} /></button>}</div>
       <div className="table-scroll" tabIndex={0} role="region" aria-label="Academic course results, scroll to view all entries">

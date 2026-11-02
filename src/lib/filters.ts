@@ -18,7 +18,7 @@ export function filterCourses(courses: Course[], { query = '', term = 'all', sta
     (!text || `${course.code} ${course.title} ${course.category}`.toLowerCase().includes(text)) &&
     (term === 'all' || course.term === term) &&
     (status === 'all' || course.status === status) &&
-    (!strongOnly || ['A+', 'A', 'A-'].includes(course.grade)),
+    (!strongOnly || (course.grade !== null && ['A+', 'A', 'A-'].includes(course.grade))),
   );
 }
 
