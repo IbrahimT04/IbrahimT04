@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowDown, ArrowUpRight, ArrowUp, Check, Code2, Copy, Download, Github, Linkedin, Mail, MapPin, Menu, Pause, Play, X, Sparkles, Cpu, Terminal, Workflow } from 'lucide-react';
-import SignalScene from './components/SignalScene.jsx';
-import Projects from './components/Projects.jsx';
-import CourseExplorer from './components/CourseExplorer.jsx';
-import { profile, experience, skillGroups, activities, interests } from './data/profile.js';
+import SignalScene from './components/SignalScene';
+import Projects from './components/Projects';
+import CourseExplorer from './components/CourseExplorer';
+import { profile, experience, skillGroups, activities, interests } from './data/profile';
 
 const links = [['work', 'Work'], ['experience', 'Experience'], ['education', 'Education'], ['about', 'About']];
 const skillIcons = [Code2, Cpu, Terminal];
@@ -13,10 +13,10 @@ export default function App() {
   const [active, setActive] = useState('');
   const [paused, setPaused] = useState(false);
   const [copyState, setCopyState] = useState('idle');
-  const copyTimer = useRef();
+  const copyTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.dataset.revealed = 'true'; observer.unobserve(entry.target); } }), { threshold: 0.06 });
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { (entry.target as HTMLElement).dataset.revealed = 'true'; observer.unobserve(entry.target); } }), { threshold: 0.06 });
     document.querySelectorAll('[data-reveal]').forEach(element => observer.observe(element));
     const sections = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) setActive(entry.target.id); }), { rootMargin: '-15% 0px -60% 0px' });
     document.querySelectorAll('main > section[id]').forEach(section => sections.observe(section));
@@ -25,7 +25,7 @@ export default function App() {
 
   useEffect(() => {
     if (!menuOpen) return;
-    const onKey = event => { if (event.key === 'Escape') { setMenuOpen(false); document.getElementById('menu-toggle').focus(); } };
+    const onKey = (event: KeyboardEvent) => { if (event.key === 'Escape') { setMenuOpen(false); document.getElementById('menu-toggle')?.focus(); } };
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, [menuOpen]);

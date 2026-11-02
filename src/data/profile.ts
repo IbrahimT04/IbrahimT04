@@ -1,11 +1,14 @@
+import type { Activity, Experience, Interest, Profile, SkillGroup } from '../types';
+
 // Profile content transcribed from the supplied Current_Resume.pdf.
 // Personal identifiers from the academic record are deliberately excluded.
-export const profile = {
+export const profile: Profile = {
   name: 'Ibrahim Tariq',
   firstName: 'Ibrahim',
   lastName: 'Tariq',
   title: 'Software engineering student & graphics enthusiast',
   email: 'itariq640@gmail.com',
+  phone: '+1 (416) 627-7531',
   github: 'https://github.com/IbrahimT04',
   linkedin: 'https://www.linkedin.com/in/ibrahim-tariq-5b9914280/',
   location: 'Ontario, Canada',
@@ -28,7 +31,7 @@ export const profile = {
   },
 };
 
-export const experience = [
+export const experience: Experience[] = [
   {
     id: 'eccc',
     company: 'Environment and Climate Change Canada',
@@ -73,7 +76,7 @@ export const experience = [
   },
 ];
 
-export const activities = [
+export const activities: Activity[] = [
   {
     id: 'sumobot',
     name: 'McMaster Sumobot Club',
@@ -100,14 +103,14 @@ export const activities = [
   },
 ];
 
-export const skillGroups = [
+export const skillGroups: SkillGroup[] = [
   { title: 'Languages', items: ['Python', 'C++', 'C', 'GLSL', 'Java', 'SQL', 'Swift', 'TypeScript'] },
   { title: 'Frameworks & APIs', items: ['OpenGL', 'SDL3', 'PyGame', 'OpenCV', 'Unreal Engine 5', 'Godot', 'Unity', 'Blender'] },
   { title: 'Tools', items: ['Unix', 'Vim', 'Git', 'CMake', 'Maven', 'Quartus', 'MATLAB', 'Arduino', 'MS Office'] },
 ];
 
 // Interests are grounded in the projects, work, and clubs listed on the resume.
-export const interests = [
+export const interests: Interest[] = [
   { title: 'Computer graphics', description: 'Physically based rendering, GPU shaders, light transport, and 3D engines.' },
   { title: 'Game development', description: 'Ray casting, game jams, and building interactive worlds.' },
   { title: 'Robotics', description: 'Autonomous robots and the connection between software and hardware.' },

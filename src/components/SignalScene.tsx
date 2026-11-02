@@ -5,23 +5,30 @@ import { useEffect, useRef } from 'react';
 const RINGS = 112;
 const SIDES = 12;
 
-function makeKnot() {
-  const vertices = [];
+type Vector3 = [number, number, number];
+type ProjectedPoint = { x: number; y: number; z: number };
+type Segment = { a: ProjectedPoint; b: ProjectedPoint; depth: number; cross: boolean };
+type SignalSceneProps = { paused?: boolean };
+
+function makeKnot(): Vector3[] {
+  const vertices: Vector3[] = [];
   for (let i = 0; i < RINGS; i += 1) {
     const t = (i / RINGS) * Math.PI * 2;
     const radius = 1 + 0.34 * Math.cos(3 * t);
-    const center = [radius * Math.cos(2 * t), radius * Math.sin(2 * t), 0.34 * Math.sin(3 * t)];
-    const tangent = [
+    const center: Vector3 = [radius * Math.cos(2 * t), radius * Math.sin(2 * t), 0.34 * Math.sin(3 * t)];
+    const tangent: Vector3 = [
       -1.02 * Math.sin(3 * t) * Math.cos(2 * t) - 2 * radius * Math.sin(2 * t),
       -1.02 * Math.sin(3 * t) * Math.sin(2 * t) + 2 * radius * Math.cos(2 * t),
       1.02 * Math.cos(3 * t),
     ];
     const length = Math.hypot(...tangent);
-    const [tx, ty, tz] = tangent.map((v) => v / length);
+    const tx = tangent[0] / length;
+    const ty = tangent[1] / length;
+    const tz = tangent[2] / length;
     const planarLength = Math.hypot(tx, ty);
     const nx = ty / planarLength;
     const ny = -tx / planarLength;
-    const binormal = [-tz * ny, tz * nx, tx * ny - ty * nx];
+    const binormal: Vector3 = [-tz * ny, tz * nx, tx * ny - ty * nx];
     for (let j = 0; j < SIDES; j += 1) {
       const angle = (j / SIDES) * Math.PI * 2;
       const c = 0.145 * Math.cos(angle);
@@ -38,14 +45,17 @@ function makeKnot() {
 
 const KNOT = makeKnot();
 
-export default function SignalScene({ paused = false }) {
-  const canvasRef = useRef(null);
+export default function SignalScene({ paused = false }: SignalSceneProps) {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   const elapsedRef = useRef(0);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return undefined;
+    const element = canvasRef.current;
+    if (!element) return undefined;
+    const context = element.getContext('2d');
+    if (!context) return undefined;
+    const canvas: HTMLCanvasElement = element;
+    const ctx: CanvasRenderingContext2D = context;
 
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let width = 1;
@@ -88,7 +98,7 @@ export default function SignalScene({ paused = false }) {
       const cosZ = Math.cos(angleZ);
       const sinZ = Math.sin(angleZ);
 
-      function project([x, y, z]) {
+      function project([x, y, z]: Vector3): ProjectedPoint {
         const y1 = y * cosX - z * sinX;
         const z1 = y * sinX + z * cosX;
         const x2 = x * cosY + z1 * sinY;
@@ -120,7 +130,7 @@ export default function SignalScene({ paused = false }) {
       ctx.fillRect(0, 0, width, height);
 
       const projected = KNOT.map(project);
-      const segments = [];
+      const segments: Segment[] = [];
       for (let i = 0; i < RINGS; i += 1) {
         for (let j = 0; j < SIDES; j += 1) {
           const a = projected[i * SIDES + j];
@@ -189,7 +199,7 @@ export default function SignalScene({ paused = false }) {
       restart();
     }
 
-    function onPointerMove(event) {
+    function onPointerMove(event: PointerEvent) {
       const rect = canvas.getBoundingClientRect();
       pointer.targetX = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
       pointer.targetY = ((event.clientY - rect.top) / rect.height - 0.5) * 2;

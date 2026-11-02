@@ -1,7 +1,9 @@
+import type { Course, CourseCategory, CourseStatus, Grade, Term } from '../types';
+
 // All 50 enrollment entries from the supplied unofficial transcript.
 // Snapshot: November 1, 2026. Letter grades and non-grade codes are preserved.
 // No percentages have been inferred from letter grades.
-export const terms = [
+export const terms: Term[] = [
   { id: '2022 Fall', label: 'Fall 2022', gpa: 11.3, status: 'completed' },
   { id: '2023 Winter', label: 'Winter 2023', gpa: 10.1, status: 'completed' },
   { id: '2023 Spring/Summer', label: 'Spring / Summer 2023', gpa: 12.0, status: 'completed' },
@@ -17,12 +19,22 @@ export const terms = [
   { id: '2027 Winter', label: 'Winter 2027', gpa: null, status: 'upcoming' },
 ];
 
-const course = (code, title, term, attemptedUnits, earnedUnits, grade, category, status = 'completed', highlight = false) => ({
+const course = (
+  code: string,
+  title: string,
+  term: string,
+  attemptedUnits: number,
+  earnedUnits: number,
+  grade: Grade,
+  category: CourseCategory,
+  status: CourseStatus = 'completed',
+  highlight = false,
+): Course => ({
   id: `${term}-${code}`.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
   code, title, term, attemptedUnits, earnedUnits, grade, category, status, highlight,
 });
 
-export const courses = [
+export const courses: Course[] = [
   course('CHEM 1E03', 'General Chemistry: Engineering I', '2022 Fall', 3, 3, 'A', 'Science'),
   course('ECON 1B03', 'Introductory Microeconomics', '2022 Fall', 3, 3, 'A-', 'Electives'),
   course('ENGINEER 1EE0', 'Engineering Co-op Program', '2022 Fall', 0, 0, 'COM', 'Co-op & training'),

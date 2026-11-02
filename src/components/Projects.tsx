@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { ArrowDown, ArrowUpRight, Braces, ChevronRight, Code2, Github, Search, X, Box, Layers, GitFork } from 'lucide-react';
-import { projects } from '../data/projects.js';
-import { filterProjects } from '../lib/filters.js';
+import { projects } from '../data/projects';
+import { filterProjects } from '../lib/filters';
+import type { Project } from '../types';
 
-function ProjectArtwork({ project }) {
-  if (project.image) return <img src={`${import.meta.env.BASE_URL}${project.image.replace(/^\//, '')}`} alt={`${project.name} screenshot from its GitHub repository`} loading="lazy" />;
+function ProjectArtwork({ project }: { project: Project }) {
+  if (project.image) return <img src={`${import.meta.env.BASE_URL}${project.image.replace(/^\//, '')}`} alt={project.imageAlt || `${project.name} screenshot from its GitHub repository`} loading="lazy" />;
   return <div className={`project-concept ${project.name.toLowerCase().includes('clarify') ? 'concept-clarify' : 'concept-graphics'}`} aria-hidden="true">
     <div className="concept-grid" /><div className="concept-object">{project.name.toLowerCase().includes('clarify') ? <Layers size={100} strokeWidth={0.7} /> : <Box size={114} strokeWidth={0.65} />}</div><span className="concept-caption mono">{project.name.toLowerCase().includes('clarify') ? 'INPUT → FILTER → CLARITY' : 'GEOMETRY × LIGHT × MATERIAL'}</span><span className="concept-tag mono">CONCEPT STUDY</span>
   </div>;
@@ -14,8 +15,8 @@ export default function Projects() {
   const [category, setCategory] = useState('All');
   const [query, setQuery] = useState('');
   const [expanded, setExpanded] = useState(false);
-  const [selected, setSelected] = useState(null);
-  const dialogRef = useRef(null);
+  const [selected, setSelected] = useState<Project | null>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
   const featured = projects.filter(project => project.fromResume);
   const categories = ['All', ...new Set(projects.map(project => project.category))];
   const filtered = useMemo(() => filterProjects(projects, { query, category }), [query, category]);
@@ -23,9 +24,9 @@ export default function Projects() {
 
   useEffect(() => {
     if (!selected) return;
-    const focused = document.activeElement;
+    const focused = document.activeElement as HTMLElement | null;
     const dialog = dialogRef.current;
-    dialog.showModal();
+    dialog?.showModal();
     const oldOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     return () => { document.body.style.overflow = oldOverflow; focused?.focus(); };

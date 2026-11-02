@@ -1,10 +1,13 @@
+import type { Project } from '../types';
+
 // Public repository metadata and project source reviewed on 2026-11-01.
 // The profile repository and its outdated README were not used as content sources.
+// Featured technical details also preserve the supplied Current_Resume.pdf claims.
 // Project documentation and source are linked through each repository URL.
-const repository = (name) => `https://github.com/IbrahimT04/${name}`;
-const pages = (name) => `https://ibrahimt04.github.io/${name}/`;
+const repository = (name: string): string => `https://github.com/IbrahimT04/${name}`;
+const pages = (name: string): string => `https://ibrahimt04.github.io/${name}/`;
 
-export const projects = [
+export const projects: Project[] = [
   {
     id: 'RayTraceMax',
     name: 'RayTraceMax',
@@ -22,9 +25,11 @@ export const projects = [
     imageAlt: 'Reflective spheres rendered by RayTraceMax against a skybox.',
     imageSource: 'https://github.com/user-attachments/assets/1ae454c6-65ac-45bd-8b49-8a8a3e23859c',
     details: [
-      'Python drives a GLSL compute pipeline through PyOpenGL and GLFW.',
-      'Scene geometry and material data reach the GPU through shader storage buffers.',
-      'Includes simple ray tracing, lighting experiments, and a multi-bounce path tracer with environment lighting.',
+      'Built an OpenGL 4.6 GPU compute shader pipeline in Python and GLFW for physically based rendering.',
+      'Implemented Monte Carlo path tracing with Multiple Importance Sampling (MIS) and Next-Event Estimation (NEE).',
+      'Implemented microfacet Cook–Torrance BRDFs with GGX/Smith and Schlick Fresnel.',
+      'Supported detailed materials with metallic/roughness, index of refraction (IOR), clearcoat, and transmission.',
+      'Combined HDR image-based lighting (IBL) with geometry stored in shader storage buffer objects (SSBOs).',
     ],
     updatedAt: '2026-02-14',
   },
@@ -42,9 +47,11 @@ export const projects = [
     fork: false,
     archived: false,
     details: [
-      'Organizes rendering through dedicated scene, mesh, model, shader, and camera modules.',
-      'Supports textured models, lighting, and customizable shaders.',
-      'Manages OpenGL vertex arrays and buffers to render scenes with multiple objects.',
+      'Developed a Python, OpenGL, and GLSL 3D engine with customizable shaders, lighting, and texture mapping.',
+      'Implemented Parallax Occlusion Mapping and Soft Shadow Mapping.',
+      'Applied Physically Based Rendering techniques for more realistic materials.',
+      'Used a Tangent-Bitangent-Normal (TBN) matrix to transform normal maps and enhance object realism.',
+      'Organizes scene, mesh, model, shader, camera, vertex array, and vertex buffer management into dedicated modules.',
     ],
     updatedAt: '2025-09-12',
   },
@@ -55,7 +62,7 @@ export const projects = [
     url: repository('Block-Shooter'),
     homepage: pages('Block-Shooter'),
     language: 'Python',
-    languages: ['Python', 'Pygame', 'Linear algebra'],
+    languages: ['Python', 'Pygame', 'NumPy', 'Linear algebra'],
     category: 'Games',
     featured: true,
     fromResume: true,
@@ -65,8 +72,10 @@ export const projects = [
     imageAlt: 'Four Block Shooter screenshots comparing raycasting with and without DDA.',
     imageSource: 'https://github.com/user-attachments/assets/65ddfae7-6a65-43ad-adc8-65ef1b12a711',
     details: [
-      'Uses raycasting to turn a 2D map into a first-person environment.',
-      'Applies vector math, DDA traversal, and fisheye correction to the renderer.',
+      'Created a retro FPS in Python, Pygame, and NumPy with adjustable level design, enemy types, and scoring.',
+      'Implemented ray casting and Digital Differential Analyzer (DDA) line drawing, using vector math and fisheye correction.',
+      'Implemented anti-aliasing with the Xiaolin Wu algorithm.',
+      'Used frame tracking to target a 60 Hz refresh rate.',
       'Includes selectable graphics settings, a minimap, shooting, and fullscreen controls.',
     ],
     updatedAt: '2025-11-25',
@@ -85,7 +94,9 @@ export const projects = [
     fork: false,
     archived: false,
     details: [
-      'Provides interactive controls for grayscale, box blur, Gaussian blur, and sharpening.',
+      'Developed an open-source C++ and OpenCV application for image enhancement, manipulation, and analysis.',
+      'Implemented image sharpening, blurring, noise reduction, edge detection, and basic image filtering.',
+      'Provides interactive controls for grayscale conversion, box blur, Gaussian blur, and sharpening.',
       'Implements Difference of Gaussians and an enhanced threshold-based variant.',
       'Uses horizontal and vertical Sobel kernels for edge detection.',
     ],

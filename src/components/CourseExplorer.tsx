@@ -1,16 +1,17 @@
 import { useMemo, useState } from 'react';
 import { ArrowUpRight, Search, SlidersHorizontal, X, Award, GraduationCap } from 'lucide-react';
-import { courses, terms } from '../data/courses.js';
-import { profile } from '../data/profile.js';
-import { filterCourses } from '../lib/filters.js';
+import { courses, terms } from '../data/courses';
+import { profile } from '../data/profile';
+import { filterCourses } from '../lib/filters';
+import type { CourseStatus } from '../types';
 
 const highlightCodes = ['SFWRENG 2OP3', 'SFWRENG 2DA4', 'SFWRENG 3MX3', 'MATH 2Z03'];
-const statusLabels = { completed: 'Completed', 'in-progress': 'In progress', upcoming: 'Upcoming', 'multi-term': 'Multi-term' };
+const statusLabels: Record<CourseStatus, string> = { completed: 'Completed', 'in-progress': 'In progress', upcoming: 'Upcoming', 'multi-term': 'Multi-term' };
 
 export default function CourseExplorer() {
   const [query, setQuery] = useState('');
   const [term, setTerm] = useState('all');
-  const [status, setStatus] = useState('all');
+  const [status, setStatus] = useState<CourseStatus | 'all'>('all');
   const [strongOnly, setStrongOnly] = useState(false);
   const filtered = useMemo(() => filterCourses(courses, { query, term, status, strongOnly }), [query, term, status, strongOnly]);
   const reset = () => { setQuery(''); setTerm('all'); setStatus('all'); setStrongOnly(false); };
@@ -28,7 +29,7 @@ export default function CourseExplorer() {
     </div>
     <div className="honours"><span><Award size={16} /> Dean’s Honour List · 2023 & 2024</span><span><Award size={16} /> Faculty of Engineering Achievement Award</span></div>
     <div className="course-highlights" data-reveal>{highlightCodes.map(code => {
-      const course = courses.find(item => item.code === code);
+      const course = courses.find(item => item.code === code)!;
       return <button key={code} className="course-highlight" onClick={() => { setQuery(code); setTerm('all'); setStatus('all'); setStrongOnly(false); document.getElementById('course-explorer').scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
         <span className="highlight-top"><span className="mono">{course.code}</span><ArrowUpRight size={17} /></span><strong>{course.grade}</strong><span>{course.title}</span>
       </button>;
